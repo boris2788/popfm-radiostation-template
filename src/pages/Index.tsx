@@ -51,8 +51,8 @@ const Index = () => {
             </div>
             
             <div className="hidden md:flex items-center gap-6">
-              {['Главная', 'Прямой эфир', 'О станции', 'Реклама', 'Контакты'].map((item, idx) => {
-                const id = ['home', 'live', 'about', 'ads', 'contacts'][idx];
+              {['Главная', 'Прямой эфир', 'Расписание', 'О станции', 'Реклама', 'Контакты'].map((item, idx) => {
+                const id = ['home', 'live', 'schedule', 'about', 'ads', 'contacts'][idx];
                 return (
                   <button
                     key={item}
@@ -91,8 +91,8 @@ const Index = () => {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 backdrop-blur-xl bg-background/95 border-b border-border animate-fade-in">
             <div className="container mx-auto px-4 py-6 space-y-4">
-              {['Главная', 'Прямой эфир', 'О станции', 'Реклама', 'Контакты'].map((item, idx) => {
-                const id = ['home', 'live', 'about', 'ads', 'contacts'][idx];
+              {['Главная', 'Прямой эфир', 'Расписание', 'О станции', 'Реклама', 'Контакты'].map((item, idx) => {
+                const id = ['home', 'live', 'schedule', 'about', 'ads', 'contacts'][idx];
                 return (
                   <button
                     key={item}
@@ -250,6 +250,67 @@ const Index = () => {
                 />
               </div>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <h3 className="font-heading font-bold text-4xl md:text-5xl text-center mb-12 fade-on-scroll">
+            <span className="gradient-text">Расписание эфира</span>
+          </h3>
+          
+          <div className="max-w-4xl mx-auto grid gap-4">
+            {[
+              { time: '06:00 - 09:00', title: 'Доброе утро!', host: 'Анна Смирнова', icon: 'Sunrise' },
+              { time: '09:00 - 12:00', title: 'Позитивный день', host: 'Максим Орлов', icon: 'Coffee' },
+              { time: '12:00 - 15:00', title: 'Обеденный хит', host: 'Ольга Петрова', icon: 'Music2' },
+              { time: '15:00 - 18:00', title: 'После обеда', host: 'Дмитрий Волков', icon: 'Headphones' },
+              { time: '18:00 - 21:00', title: 'Вечерний драйв', host: 'Елена Кузнецова', icon: 'Disc3' },
+              { time: '21:00 - 00:00', title: 'Ночная волна', host: 'Андрей Соколов', icon: 'Moon' },
+              { time: '00:00 - 06:00', title: 'Музыка без остановки', host: 'Автоплейлист', icon: 'Radio' }
+            ].map((show, idx) => (
+              <Card 
+                key={show.time} 
+                className="p-6 hover:scale-[1.02] transition-all cursor-pointer backdrop-blur-sm bg-card/80 fade-on-scroll group"
+                style={{ animationDelay: `${idx * 0.05}s` }}
+              >
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Icon name={show.icon as any} className="text-white" size={28} />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium">
+                        {show.time}
+                      </span>
+                      <Icon name="Clock" className="text-muted-foreground" size={16} />
+                    </div>
+                    <h4 className="font-heading font-bold text-xl mb-1">{show.title}</h4>
+                    <p className="text-muted-foreground flex items-center gap-2">
+                      <Icon name="Mic" size={14} />
+                      Ведущий: {show.host}
+                    </p>
+                  </div>
+
+                  <Icon name="ChevronRight" className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" size={24} />
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12 fade-on-scroll">
+            <p className="text-muted-foreground mb-4">
+              Все программы по московскому времени (МСК+7)
+            </p>
+            <Button 
+              onClick={() => scrollToSection('live')}
+              className="gradient-bg hover:opacity-90 transition-all hover:scale-105"
+            >
+              <Icon name="Play" size={18} className="mr-2" />
+              Слушать сейчас
+            </Button>
           </div>
         </div>
       </section>
