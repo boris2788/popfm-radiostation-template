@@ -182,10 +182,7 @@ const Index = () => {
               <span className="gradient-text">Прямой эфир</span>
             </h3>
             
-            <Card className="gradient-border p-8 md:p-12 backdrop-blur-xl bg-card/50 fade-on-scroll">
-              <div className="flex flex-col items-center gap-8">
-                <div dangerouslySetInnerHTML={{
-                  __html: `
+           
                  <div style="width: 870px;"  id="sc-player">
 <div
 is="player"
