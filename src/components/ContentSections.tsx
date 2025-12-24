@@ -20,7 +20,7 @@ const ContentSections = ({ scrollToSection }: ContentSectionsProps) => {
               <div className="flex flex-col items-center gap-8">
                 <div 
                   className="w-full max-w-4xl mx-auto"
-                  dangerouslySetInnerHTML={{
+                  dangerouslySetInnerHTML=
                     __html: `<div style="width: 870px;"  id="sc-player">
 
 is="player"
