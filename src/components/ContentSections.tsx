@@ -22,7 +22,7 @@ const ContentSections = ({ scrollToSection }: ContentSectionsProps) => {
                   className="w-full max-w-4xl mx-auto"
                   dangerouslySetInnerHTML={{
                     __html: `<div style="width: 870px;"  id="sc-player">
-<div
+
 is="player"
 lang="ru" 
 api-url="https://stream.popfm-bir.ru:1030/api/v2"
