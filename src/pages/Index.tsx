@@ -257,7 +257,102 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-muted/30">
+      <section id="popular" className="py-20">
+        <div className="container mx-auto px-4">
+          <h3 className="font-heading font-bold text-4xl md:text-5xl text-center mb-16 fade-on-scroll">
+            <span className="gradient-text">Популярные программы</span>
+          </h3>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                time: '07:00 - 10:00',
+                title: 'Утренний драйв',
+                host: 'Анна Светлова',
+                description: 'Лучшее начало дня с бодрящей музыкой и позитивными новостями',
+                icon: 'Sunrise'
+              },
+              {
+                time: '14:00 - 17:00',
+                title: 'Поп-хит парад',
+                host: 'Дмитрий Волков',
+                description: 'Топ-20 самых горячих треков недели и ваши голоса за любимые песни',
+                icon: 'TrendingUp'
+              },
+              {
+                time: '20:00 - 23:00',
+                title: 'Вечерний чил',
+                host: 'Елена Морозова',
+                description: 'Расслабляющая атмосфера с мягкими хитами для вечернего отдыха',
+                icon: 'Moon'
+              }
+            ].map((program, idx) => (
+              <Card key={program.title} className="p-6 hover:scale-105 transition-all cursor-pointer backdrop-blur-sm bg-card/80 fade-on-scroll group" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-4 group-hover:animate-glow">
+                  <Icon name={program.icon as any} className="text-white" size={28} />
+                </div>
+                <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-3">
+                  {program.time}
+                </div>
+                <h4 className="font-heading font-bold text-xl mb-2">{program.title}</h4>
+                <p className="text-sm text-muted-foreground mb-3">{program.description}</p>
+                <div className="flex items-center gap-2 text-sm">
+                  <Icon name="User" size={16} className="text-primary" />
+                  <span className="font-medium">{program.host}</span>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="hosts" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h3 className="font-heading font-bold text-4xl md:text-5xl text-center mb-16 fade-on-scroll">
+            <span className="gradient-text">Наши ведущие</span>
+          </h3>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                name: 'Анна Светлова',
+                role: 'Утренний ведущий',
+                image: 'https://cdn.poehali.dev/projects/53d89b4f-421e-4f0f-aabe-d9a2d2e49535/files/ddfd61e2-4398-44c5-883a-7586a878c35a.jpg',
+                description: 'Заряжает энергией каждое утро'
+              },
+              {
+                name: 'Дмитрий Волков',
+                role: 'Дневной эфир',
+                image: 'https://cdn.poehali.dev/projects/53d89b4f-421e-4f0f-aabe-d9a2d2e49535/files/c71830a2-b910-4510-a570-4d4a651123ec.jpg',
+                description: 'Знает все о современной музыке'
+              },
+              {
+                name: 'Елена Морозова',
+                role: 'Вечерний эфир',
+                image: 'https://cdn.poehali.dev/projects/53d89b4f-421e-4f0f-aabe-d9a2d2e49535/files/29128d89-65b2-46a7-a860-bc1e63fa4ffb.jpg',
+                description: 'Создает уютную атмосферу'
+              }
+            ].map((host, idx) => (
+              <Card key={host.name} className="overflow-hidden hover:scale-105 transition-all cursor-pointer fade-on-scroll group" style={{ animationDelay: `${idx * 0.15}s` }}>
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={host.image} 
+                    alt={host.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 bg-card">
+                  <h4 className="font-heading font-bold text-xl mb-1">{host.name}</h4>
+                  <p className="text-primary text-sm font-medium mb-2">{host.role}</p>
+                  <p className="text-muted-foreground text-sm">{host.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20">
         <div className="container mx-auto px-4">
           <h3 className="font-heading font-bold text-4xl md:text-5xl text-center mb-16 fade-on-scroll">
             <span className="gradient-text">О станции</span>
@@ -381,9 +476,83 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-border">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2024 POPFM Биробиджан. Все права защищены.</p>
+      <footer className="py-12 border-t border-border bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-8 mb-8">
+              <div className="col-span-2">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                    <Icon name="Radio" className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h2 className="font-heading font-bold text-2xl gradient-text">POPFM</h2>
+                    <p className="text-xs text-muted-foreground">Биробиджан</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  Лучшая поп-музыка 24/7. Мы создаем атмосферу, которая поднимает настроение и дарит позитив каждый день.
+                </p>
+                <div className="flex gap-3">
+                  {[
+                    { name: 'Instagram', link: '#' },
+                    { name: 'Facebook', link: '#' },
+                    { name: 'Youtube', link: '#' },
+                    { name: 'Music', link: '#' }
+                  ].map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.link}
+                      className="w-10 h-10 rounded-full border border-primary/30 hover:bg-primary/10 flex items-center justify-center hover:scale-110 transition-all"
+                    >
+                      <Icon name={social.name as any} size={18} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-heading font-semibold text-lg mb-4">Навигация</h4>
+                <ul className="space-y-2">
+                  {['Главная', 'Прямой эфир', 'Расписание', 'О станции'].map((item, idx) => {
+                    const id = ['home', 'live', 'schedule', 'about'][idx];
+                    return (
+                      <li key={item}>
+                        <button
+                          onClick={() => scrollToSection(id)}
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                        >
+                          {item}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-heading font-semibold text-lg mb-4">Контакты</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Phone" size={16} className="text-primary mt-0.5" />
+                    <span>+7 (42622) 2-XX-XX</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Mail" size={16} className="text-primary mt-0.5" />
+                    <span>info@popfm-birobidzhan.ru</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="MapPin" size={16} className="text-primary mt-0.5" />
+                    <span>г. Биробиджан, ул. Ленина, 1</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+              <p>© 2024 POPFM Биробиджан. Все права защищены. Создано с ❤️ для любителей отличной музыки.</p>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
