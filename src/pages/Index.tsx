@@ -182,67 +182,12 @@ const Index = () => {
               <span className="gradient-text">Прямой эфир</span>
             </h3>
             
-           
-                 <div style="width: 870px;"  id="sc-player">
-<div
-is="player"
-lang="ru" 
-api-url="https://stream.popfm-bir.ru:1030/api/v2"
-server-id="1"
-station-name="POPFM Биробиджан"
-station-url="https://popfm-bir.ru/"
-imagecontainer="right"
-imagecontainer-bg="#e8e8e8"
-imagecontainer-bg-opacity="0"
-controlscontainer="top"
-controlscontainer-bg="#d6d6d6"
-controlscontainer-bg-opacity="0"
-controlscontainer-bg-img=""
-historycontainer="top"
-historycontainer-bg="#b6deec"
-historycontainer-bg-opacity="0"
-:show-history="true"
-history-limit="30"
-sharecontainer="both"
-sharecontainer-bg="#ffffff"
-sharecontainer-bg-opacity="1"
-:show-share="false"
-share-url=""
-:share="[]"
-:show-dj="false"
-default-dj-img="https://stream.popfm-bir.ru:1030/media/djs/dj.png"
-:show-image="true"
-default-cover-image="https://stream.popfm-bir.ru:1030/media/widgets/019b3e44-bb20-7111-9491-0bbb7544fb5b_vYeOYP7.png"
-play-button-color="#526098"
-play-button-bg="null"
-visualizer-outline-color="#37679a"
-visualizer-bar-width="1"
-:channels-displayed="[1,11,20,29]"
-channels-switch-bg="#f7f7f7"
-channels-switch-color="#788ab5"
-channels-switch-bg-active="#aca8e1"
-channels-switch-color-active="#000000"
-:show-vote="false"
-vote-buttons-color="#dce3ea"
-vote-buttons-opacity="1"
-vote-results-font-color="#FFFFFF"
-vote-results-font-size="15"
-:progress-show="true"
-progress-bar-color="#ffffff"
-progress-bar-bg-color="#41b883"
-progress-bar-bg-opacity="0"
-progress-bar-bg-height="100"
-progress-bar-opacity="0.2"
-progress-font-color="#FFFFFF"
-progress-font-size="20"
-progress-bar-bg-radius="4"
-progress-bar-bg-border="#F5F5F5"
-player-width="870px"
->
-</div>
-</div>
-<script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/sc_player/sc_player.js"></script>
-                    `
+            <Card className="gradient-border p-8 md:p-12 backdrop-blur-xl bg-card/50 fade-on-scroll">
+              <div className="flex flex-col items-center gap-8">
+                <div 
+                  className="w-full max-w-4xl mx-auto"
+                  dangerouslySetInnerHTML={{
+                    __html: `<div style="width: 870px; max-width: 100%;" id="sc-player"><div is="player" lang="ru" api-url="https://stream.popfm-bir.ru:1030/api/v2" server-id="1" station-name="POPFM Биробиджан" station-url="https://popfm-bir.ru/" imagecontainer="right" imagecontainer-bg="#e8e8e8" imagecontainer-bg-opacity="0" controlscontainer="top" controlscontainer-bg="#d6d6d6" controlscontainer-bg-opacity="0" controlscontainer-bg-img="" historycontainer="top" historycontainer-bg="#b6deec" historycontainer-bg-opacity="0" :show-history="true" history-limit="30" sharecontainer="both" sharecontainer-bg="#ffffff" sharecontainer-bg-opacity="1" :show-share="false" share-url="" :share="[]" :show-dj="false" default-dj-img="https://stream.popfm-bir.ru:1030/media/djs/dj.png" :show-image="true" default-cover-image="https://stream.popfm-bir.ru:1030/media/widgets/019b3e44-bb20-7111-9491-0bbb7544fb5b_vYeOYP7.png" play-button-color="#526098" play-button-bg="null" visualizer-outline-color="#37679a" visualizer-bar-width="1" :channels-displayed="[1,11,20,29]" channels-switch-bg="#f7f7f7" channels-switch-color="#788ab5" channels-switch-bg-active="#aca8e1" channels-switch-color-active="#000000" :show-vote="false" vote-buttons-color="#dce3ea" vote-buttons-opacity="1" vote-results-font-color="#FFFFFF" vote-results-font-size="15" :progress-show="true" progress-bar-color="#ffffff" progress-bar-bg-color="#41b883" progress-bar-bg-opacity="0" progress-bar-bg-height="100" progress-bar-opacity="0.2" progress-font-color="#FFFFFF" progress-font-size="20" progress-bar-bg-radius="4" progress-bar-bg-border="#F5F5F5" player-width="870px"></div></div><script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/sc_player/sc_player.js"></script>`
                   }}
                 />
               </div>
