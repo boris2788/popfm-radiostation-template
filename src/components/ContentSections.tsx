@@ -21,7 +21,30 @@ const ContentSections = ({ scrollToSection }: ContentSectionsProps) => {
                 <div 
                   className="w-full max-w-4xl mx-auto"
                   dangerouslySetInnerHTML={{
-                    __html: `<div style="width: 870px; max-width: 100%;" id="sc-player"><div is="player" lang="ru" api-url="https://stream.popfm-bir.ru:1030/api/v2" server-id="1" station-name="POPFM Биробиджан" station-url="https://popfm-bir.ru/" imagecontainer="right" imagecontainer-bg="#e8e8e8" imagecontainer-bg-opacity="0" controlscontainer="top" controlscontainer-bg="#d6d6d6" controlscontainer-bg-opacity="0" controlscontainer-bg-img="" historycontainer="top" historycontainer-bg="#b6deec" historycontainer-bg-opacity="0" :show-history="true" history-limit="30" sharecontainer="both" sharecontainer-bg="#ffffff" sharecontainer-bg-opacity="1" :show-share="false" share-url="" :share="[]" :show-dj="false" default-dj-img="https://stream.popfm-bir.ru:1030/media/djs/dj.png" :show-image="true" default-cover-image="https://stream.popfm-bir.ru:1030/media/widgets/019b3e44-bb20-7111-9491-0bbb7544fb5b_vYeOYP7.png" play-button-color="#526098" play-button-bg="null" visualizer-outline-color="#37679a" visualizer-bar-width="1" :channels-displayed="[1,11,20,29]" channels-switch-bg="#f7f7f7" channels-switch-color="#788ab5" channels-switch-bg-active="#aca8e1" channels-switch-color-active="#000000" :show-vote="false" vote-buttons-color="#dce3ea" vote-buttons-opacity="1" vote-results-font-color="#FFFFFF" vote-results-font-size="15" :progress-show="true" progress-bar-color="#ffffff" progress-bar-bg-color="#41b883" progress-bar-bg-opacity="0" progress-bar-bg-height="100" progress-bar-opacity="0.2" progress-font-color="#FFFFFF" progress-font-size="20" progress-bar-bg-radius="4" progress-bar-bg-border="#F5F5F5" player-width="870px"></div></div><script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/sc_player/sc_player.js"></script>`
+                    __html: `<link href="https://stream.popfm-bir.ru:1030/media/static/css/player/base.css" rel="stylesheet" type="text/css" />
+<link href="https://stream.popfm-bir.ru:1030/media/static/css/player/style-10.css" rel="stylesheet" type="text/css" />
+<link href="https://stream.popfm-bir.ru:1030/media/static/css/ui/jquery.ui.slider.css" rel="stylesheet" type="text/css" />
+<script>
+if (typeof jQuery == 'undefined') { 
+  var i = "i";
+  document.write('<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></scr' + i + 'pt>');
+}
+</script>
+<script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/jplayer/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/jplayer/modernizr.js"></script>
+<script type="text/javascript" src="https://stream.popfm-bir.ru:1030/media/static/js/jplayer/rt_pl.js"></script>
+<div id="rtJpID-1"></div>
+<div class="rtplwrapperForIe">
+<div id="rtplayer-1" class="rtplmain_window gradient_style-10">
+<a id="button_play_stop-1" class="rtplbutton_play_stop button_play_stop_style-10" href="#"></a>
+<div id="current_time-1" class="rtplcurrent_time">00:00:00</div>
+<a id="rtplmute-1" class="rtplmute button_mute_style-10" href="#"></a>
+<div id="rtplvolume-1" class="rtplvolume"></div>
+<a id="rtplmaxvol-1" class="rtplmaxvol button_max_vol_style-10" href="#"></a>
+</div>
+</div>
+<script>$(document).ready( function(){ new RTPlayer( 1, 50, false, "https://stream.popfm-bir.ru:1030",  "mp3", {"mp3": "https://stream.popfm-bir.ru:1045/stream"}, "ru")  });</script>
                   }}
                 />
               </div>
